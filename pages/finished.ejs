@@ -1,0 +1,41 @@
+<%- include('../components/head'); %>
+<div id="toasts-block" class="position-absolute bottom-0 end-0"></div>
+
+<div class="container h-100 pt-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>FINISHED TASKS</h2>
+    <button
+      type="button"
+      onclick="deleteFinishedTasks()"
+      class="btn btn-danger btn-sm"
+    >
+      clear all
+    </button>
+  </div>
+
+  <ul class="list-group pb-5 h-75 overflow-scroll mt-3" id="task-list">
+    <% tasks.forEach(function(task) { %>
+    <li
+      class="
+        list-group-item
+        d-flex
+        justify-content-between
+        align-items-center
+        important
+      "
+      id="<%= task._id%>"
+    >
+      <%= task.taskDescription %>
+
+      <div class="action-buttons">
+        <i
+          class="bi bi-arrow-return-left fs-4"
+          onclick="restoreTask(event.currentTarget.parentElement.parentElement)"
+        ></i>
+      </div>
+    </li>
+    <% }); %>
+  </ul>
+</div>
+
+<%- include('../components/footer'); %>

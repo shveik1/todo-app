@@ -1,0 +1,53 @@
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.action-buttons .bi {
+  transition: all 0.3s ease-in-out;
+}
+.action-buttons .bi:hover {
+  cursor: pointer;
+}
+.action-buttons .bi.bi-trash-fill:hover {
+  color: #dc3545 !important;
+}
+.action-buttons .bi.bi-star-fill:hover {
+  color: #ffc107 !important;
+}
+.action-buttons .bi.bi-check-circle-fill:hover {
+  color: #198754 !important;
+}
+
+.important {
+  background-color: #ffc1072d !important;
+}
+
+.important i.bi-star-fill {
+  color: #ffc107 !important;
+}
+
+.toast:hover {
+  opacity: 100% !important;
+}
+.toast button:hover {
+  cursor: pointer;
+}
+
+.heading404 {
+  font-size: 8rem;
+  letter-spacing: 0.5rem;
+  text-shadow: 0 1px 0 #353535, 0 2px 0 #353535, 0 3px 0 #353535,
+    0 4px 0 #353535, 0 5px 0 #353535, 0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+    0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+  animation: heading404 2s ease-in-out alternate infinite;
+}
+
+#toasts-block {
+  z-index: 1;
+}
+
+#task-list::-webkit-scrollbar {
+  display: none;
+}

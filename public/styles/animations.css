@@ -1,0 +1,24 @@
+@keyframes heading404 {
+  from {
+    transform: translateY(10px);
+  }
+
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes toastPopUp {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 75%;
+    transform: translateY(1px);
+  }
+}

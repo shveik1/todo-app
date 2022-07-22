@@ -1,0 +1,10 @@
+{
+    "database": {
+        "DATABASE_NAME":"TODO-APP",
+        "MONGO_URL":"<your connection here>"
+    },
+
+    "session": {
+        "secret": "mysecret"
+    }
+}

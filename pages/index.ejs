@@ -1,0 +1,63 @@
+<%- include('../components/head'); %>
+
+<div id="toasts-block" class="position-absolute bottom-0 end-0"></div>
+
+<div class="container h-100 pt-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>YOUR TASKS</h2>
+  </div>
+  <div class="input-group my-3">
+    <input
+      type="text"
+      id="task-input"
+      class="form-control"
+      placeholder="Enter your task"
+      aria-label="Recipient's username"
+      aria-describedby="button-addon2"
+    />
+    <button class="btn btn-primary" type="button" id="task-input-btn">
+      Add
+    </button>
+  </div>
+  <ul class="list-group pb-5 h-75 overflow-scroll" id="task-list">
+    <% tasks.forEach(function(task) { %>
+    <li
+      class="
+        list-group-item
+        d-flex
+        justify-content-between
+        align-items-center
+        <%
+        if(task.isImportant
+        ==
+        true){
+        %>important<%
+        }
+        %>
+      "
+      id="<%= task._id%>"
+    >
+      <span style="width: 60%; word-wrap: break-word">
+        <%= task.taskDescription %>
+      </span>
+
+      <div class="action-buttons d-flex">
+        <i
+          class="bi bi-trash-fill fs-4"
+          onclick="deleteTask(event.currentTarget.parentElement.parentElement)"
+        ></i>
+        <i
+          class="bi bi-star-fill fs-4 mx-3"
+          onclick="highlightTask(event.currentTarget.parentElement.parentElement)"
+        ></i>
+        <i
+          class="bi bi-check-circle-fill fs-4"
+          onclick="finishTask(event.currentTarget.parentElement.parentElement)"
+        ></i>
+      </div>
+    </li>
+    <% }); %>
+  </ul>
+</div>
+
+<%- include('../components/footer'); %>
