@@ -6,9 +6,6 @@ require("dotenv").config()
 const MONGO_URI = process.env.MONGO_URI;
 const DATABASE_NAME = process.env.DATABASE_NAME;
 
-console.log(MONGO_URI);
-console.log(DATABASE_NAME);
-
 const client = new MongoClient(MONGO_URI);
 
 class DatabaseHelper {
