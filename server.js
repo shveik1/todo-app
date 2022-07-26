@@ -24,7 +24,7 @@ app.use(express.static(__dirname + "/public"));
 app.use("/api", require("./routes/api"));
 app.use("/auth", require("./routes/auth"));
 
-app.set("views", __dirname + "\\pages");
+app.set("views", __dirname + "/pages");
 app.set("view engine", "ejs");
 
 const PORT = process.env.PORT || 3000;
@@ -104,7 +104,6 @@ app.listen(PORT, async () => {
   let databaseHelper = new DatabaseHelper();
   await databaseHelper.initialize();
   database = databaseHelper.getDatabase();
-
   app.set("database", database);
 
   console.log(`Server has been started on http://localhost:${PORT}`);
