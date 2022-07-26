@@ -105,6 +105,7 @@ app.listen(PORT, async () => {
   await databaseHelper.initialize();
   database = databaseHelper.getDatabase();
   app.set("database", database);
+  console.log(database)
 
   console.log(`Server has been started on http://localhost:${PORT}`);
 });
