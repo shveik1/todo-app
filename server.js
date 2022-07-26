@@ -1,8 +1,6 @@
 const express = require("express");
 const session = require("express-session");
 
-const config = require("./config.json")
-
 const { DatabaseHelper } = require("./database");
 const { ObjectId } = require("mongodb");
 
@@ -13,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
-    secret: config.session.secret,
+    secret: "mysecret",
     resave: false,
     saveUninitialized: true,
     name: "session",

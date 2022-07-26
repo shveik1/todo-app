@@ -1,11 +1,12 @@
 const { MongoClient } = require("mongodb");
+
 const process = require("process");
-const config = require("./config.json")
+require("dotenv/config")
 
-const MONGO_URL = config.database.MONGO_URL;
-const MONGO_DATABASE = config.database.DATABASE_NAME;
+const MONGO_URI = process.env.MONGO_URI;
+const DATABASE_NAME = process.env.DATABASE_NAME;
 
-const client = new MongoClient(MONGO_URL);
+const client = new MongoClient(MONGO_URI);
 
 class DatabaseHelper {
   constructor() { }
@@ -13,7 +14,7 @@ class DatabaseHelper {
   async initialize() {
     try {
       await client.connect();
-      this.database = client.db(MONGO_DATABASE);
+      this.database = client.db(DATABASE_NAME);
 
       const isUsers = await this.database
         .listCollections({ name: "users" })

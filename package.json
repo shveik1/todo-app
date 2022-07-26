@@ -21,5 +21,8 @@
     "express-session": "^1.17.3",
     "mongodb": "^4.7.0",
     "nodemon": "^2.0.18"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.1"
   }
 }
