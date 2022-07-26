@@ -9,7 +9,6 @@ let database;
 
 router.use(async (req, res, next) => {
   if (!database) database = req.app.get("database");
-  console.log(database);
   next();
 });
 
